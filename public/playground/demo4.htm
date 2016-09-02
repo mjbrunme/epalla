@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	
+		<title>epalla</title>
+		<meta name="description" content="The HTML5 Herald">
+		<meta name="author" content="SitePoint">
+		
+		<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+		<![endif]-->
+			
+		<style type="text/css">
+			html {
+				height: 100%;
+			}
+			
+			body {
+				background: #ffffff url(mammoth.jpg) no-repeat;
+				background-size: cover;
+				margin: 0;
+				padding: 0;
+			}
+			
+			#topline_left {
+				opacity: 0.9;
+				position: absolute;
+				top: 0px;
+				width: 0px;
+				right: 70%;
+				background-color: #2671AE;
+				height: 2px;
+				transition: width 0.5s ease-out;
+			}
+			
+			#topline_right {
+				opacity: 0.9;
+				position: absolute;
+				top: 0px;
+				left: 30%;
+				width: 0px;
+				background-color: #2671AE;
+				height: 2px;
+				transition: width 0.5s ease-out;
+			}			
+			
+			#bar {
+				opacity: 0.9;
+				position: absolute;
+				left: 30%;
+				top: -62px;
+				width: 118px;
+				height: 0;
+				background-color: #2671AE;
+				overflow: visible;
+				transition: height 0.8s ease-out;
+			}
+			
+			#logo {
+				position: absolute;
+				width: 118px;
+				height: 60px;
+				bottom: -62px;
+			}
+		</style>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="topline_left"></div>
+		<div id="topline_right"></div>
+		<div id="bar">
+			<div id="logo"><img src="logo.png" width="118" height="58"></div>
+		</div>
+		
+		
+<script type="text/javascript">
+$(function() {
+	alignLogo();
+
+	$('#topline_left').css('width', '30%');
+	$('#topline_right').css('width', '70%');
+});
+
+	
+$(window).resize(function() {
+	alignLogo();
+});	
+
+function alignLogo() {
+	$('#bar').css('height', Math.floor($(window).height()/2)+30 + 'px');
+}
+</script>
+	</body>
+</html>
